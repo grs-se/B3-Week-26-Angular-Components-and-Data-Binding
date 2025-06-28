@@ -1,0 +1,14 @@
+@if (showImage) {
+  <img [src]="profilePicUrl" [alt]="userName">
+}
+<p>Hello, {{ userName }}!</p>
+<input [(ngModel)]="userName" placeholder="Edit your name">
+<button (click)="toggleImage()">Toggle Image</button>
+
+<input (keyup.enter)="saveName()">
+<button (click)="resetName()">Reset</button>
+
+<form #profileForm="ngForm" (ngSubmit)="onSubmit(profileForm)">
+  <input name="email" ngModel placeholder="Enter your email">
+  <button type="submit">Submit</button>
+</form>
